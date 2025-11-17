@@ -28,7 +28,3 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-# Project exclude paths
-/src/BooleanExercise/
-/src/ExerciseRandom/
-/src/Kata1/

@@ -1,0 +1,64 @@
+Exception Handling -> sistema di gestione delle eccezioni che prevede la loro suddivisione in due tipologie:
+1. CHECKED: esprimono eccezioni che si differiscono a condizioni recuperabili e che quindi
+possono essere gestite dal metodo chiamante.
+\_ sono eccezioni controllate
+
+2. UNCHECKED: esprimono condizioni non recuperabili, generalmente doute ad errori di programmazione
+e quindi non gestibili dal metodo chiamante
+\_ sono eccezioni non controllate
+
+->Esempio di eccezioni del primo tipo:
+IOException e FileNotFoundException : il client è in grado di gestirli prospettandole
+all'utente che può intervenire.
+
+public class UserNotFoundException extends Exception { ---> bisogna estendere java.lang.Exception
+    public UserNotFoundException(String message) {
+        super(message);
+    }
+}
+Per questa eccezione il compilatore richiede la loro gestione o attraverso l'utilizzo di un blocco
+try...catch oppure differendo la gestione al metodo chiamante attraverso la clausola trows
+
+  public User findUser(String username) throws UserNotFoundException {
+        if ( "".equals( username ) ) {
+            throw new UserNotFoundException("User does not exists!");
+        }
+        return new User( username );
+    }
+
+    public static void main(String[] args) {
+        UserService service = new UserService();
+        try {
+            User user = service.findByName("");
+        } catch (UserNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+-> Esempio di eccezioni del secondo tipo:
+NullPointerException e IndexOutOfBoundsException: il client non può fare nulla per gestire
+l'eccezione che può essere eliminata solo dal programmatore, ad esempio testano i valori nulli
+prima di utilizzarli.
+
+public class TooManyDataException extends RuntimeException { --> bisogna estendere java.lang.RuntimeException
+    public TooManyDataException(String message) {
+        super(message);
+    }
+}
+Per queste tipologie di ecceioni il compilatore non ne richiede la gestione, l'utilizzo del blocco try...catch è opzionale
+ public void analyze(List<User> users) {
+        if ( users.size() > 50 ) {
+            throw new TooManyDataException("Too many users in the list");
+        }
+    }
+
+    public static void main(String[] args) {
+        UserService service = new UserService();
+
+        // Create 100 users
+        List<User> users = new ArrayList<>( Collections.nCopies( 100, new User() ) );
+
+        obj.analyze(users);
+    }
+}

@@ -1,0 +1,13 @@
+**CLASSI ASTRATTE E INTERFACCE **
+Entrambe definiscono un concetto senza dover conoscere i dettagli di una classe, dettagli che saranno implementati dai figli.
+
+- Differenze principali:
+1. una classe astrattta , oltre a metodi astratti, può contenere dati e metodi non astratti. Un interfaccia no, ha solo astratto
+2. una classe astratta può avere un costruttore, l'interfaccia no.
+3. in un interfaccia si possono definire solo costanti
+4. in una interfaccia i metodi avranno visibilità public in automatico ( posso anche lasciare quella di defoult, ma i figli saranno poi costretti
+a fare override dei metodi con public, anche se sono nello stesso package)
+
+Oltre alle differenze sintattiche, si usa una classe astratta o un interfaccia in base al tipo di legame che si vuole instaurare con le classi derivate.
+Se si vuole un legame molto forte con le classi derivare si usa una classe astratta, in questo modo tutti i figli avranno un comportamento comune.
+Le interfacce servono per definire un comportamento più generico con i figli, potendo questi essere di vario genere e natura ( un figlio può implementare tante interfacce ma solo una classe)

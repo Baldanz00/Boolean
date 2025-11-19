@@ -1,0 +1,95 @@
+In generale in informatica il termine 'polimorfismo' ('avere molte forme') viene usato per riferirsi a espressioni che possono rappresentare
+valori di diversi tipi -> 'espressioni polimorfiche'
+
+In java il polimorfismo ha due tipi di comportamento:
+. polimorfismo dei metodi -> overload e override dei metodi
+. polimorfismo dei dati -> permette ad una classe di assumere tutte le forme dei figli
+L esempio:
+interface Animale {
+}
+public class Mucca implements Animale {
+    public static void main(String[]args) {
+        Animale a1 = new Mucca();
+    }
+}
+Grazie a questo possiamo usare oggetti che espongono la stessa interfaccia, ma hanno implementazioni diverse.
+
+[Una interfaccia definisce un contratto generale che le sottoclassi devono soddisfare, quindi possiamo usare in
+un metodo una interfaccia che varierà il suo comportamento in base a quale sottoclasse verrà usata.
+L esempio:
+public interface Animale {
+    public void emettiVerso();
+}
+public class Cavallo implements Animale {
+    @Override
+    public void emettiVerso() {
+        System.out.println("NITRITO");
+        // TODO Auto-generated method stub
+
+    }
+}
+public class Leone implements Animale{
+    @Override
+    public void emettiVerso() {
+        System.out.println("RUGGITO");
+
+
+    }
+}
+public class Mucca implements Animale {
+    @Override
+    public void emettiVerso() {
+        // TODO Auto-generated method stub
+        System.out.println("MUGGITO");
+    }
+    public void emettiVerso(int c) {
+        // TODO Auto-generated method stub
+        System.out.println("MUGGITO  forter");
+    }
+}
+public class Prova {
+
+    public static void faiVerso(Animale l) {
+        l.emettiVerso();
+    }
+    public static void main(String[] args) {
+        Leone l1 = new Leone();
+        faiVerso(l1);
+        Mucca m = new Mucca();
+        faiVerso(m);
+        Cavallo c = new Cavallo();
+        faiVerso(c);
+
+        //
+        //
+         Animale[] arrayAnimali = new Animale[5];
+
+         arrayAnimali[0] = new Mucca();
+         arrayAnimali[1] = new Mucca();
+         arrayAnimali[2] = new Cavallo();
+         arrayAnimali[3] = new Mucca();
+         arrayAnimali[4] = new Leone();
+
+
+
+         for(int i = 0; i < arrayAnimali.length; i++)
+         {
+             Animale anim = arrayAnimali[i];
+
+
+
+         }
+
+         for(Animale e: arrayAnimali)
+             e.emettiVerso();
+
+
+        // chiamata di un metodo che appartiene solo al figlio
+         Animale muc = new Mucca();
+         muc.emettiVerso(1); //errore compilazione, metodo non visi-bile
+    }
+}
+N.B. Tutte le classi dipendono dalla classe Object, di conseguenza Object può assumere la forma di qualsiasi classe.
+tipo:
+Object o1 = new Cavallo();
+

@@ -1,0 +1,19 @@
+Java è un linguaggio di programmazione orientato ad oggetti.
+L'ereditarietà è un paradigma dell'OOP, mecanismo dmediante il quale una classe può ereditare attributi e
+metodi di un altra classe dichiarando di derivare da quest'ultima con la keyword 'extends'.
+
+Ereditarietà vuol dire creare nuve classi basate su classi esistensi.
+
+- Aspetti principali -
+. L'ereditarietà è il concetto secondo cui una classe può ripetere le proprietà e i metodi del suo genitore ( superclasse)
+. una classe figlia (sottoclasse) è una classe che eredita da un altra
+. una classe genitore (superclasse) è una classe che ha un numero di funzioni e queste funzioni possono essere ereditate dalla classe figlia
+. l'override del metodo sta modificando il comportamento di un metodo della classe derivata. Di solito è un comportamento specifico. Se si sovrascrive
+un medoto nell'erede che è gia nella classe genitore, in un certo senso si sostituisce il metodo genitore
+. una classe può avere solo una classe antenata, ma una classe antenata può avere più fligli
+. La catena di reditarietà è diretta dalla classe più astratta, laq superclasse è la più astratta nella catena di classi ( classe base che non richiede implementazione)
+. attraverso la keyword .super ho accesso ad attricuti e metodi della superclasse
+. keyword 'this', mi sto riferendo all'oggetto corrente, evitando ambiguità tra parametri
+
+-> classi astratte: sono classe che definiscono comportamenti e hanno metodi astratti (senza corpo) che verranno implementati dalle sottoclassi. Questi metodi definiscono
+un comportamento generico.

@@ -1,0 +1,32 @@
+L'incapsulamento è uno dei pilastri fondamenta del'OOP.
+Posso racchiudere lo stato interno di una classe, per proteggerlo dall'esterno. Questo posso farlo cambiando i modificatori di accesso
+come private,protected e non più public.
+
+L'incapsulamento mi permette quindi di controllare quali parti del programma possono accedere o modificare i dati all'interno di un oggetto.
+
+- Vantaggi -
+1. Protezione dei dati: posso impedire modifiche accidentali o non autorizzate ai dati
+2. Migliore manutenzione del codice: l'incapsulamento facilita l'aggiornamento e la modifica del codice perchè mi consente di isolare le moifiche senta intaccare l'intero programma
+3. Riutilizzo : l'incapsulamento mi permette di utilizzare il codice senza dover riscrivere le stesse funzioni in più parti del programma
+4. Flessibilità : attraverso i metodi di accesso (getter e setter) posso gestire le modifiche ai dati in modo controllato, aggiungendo anche logica personalizzata prima di alterare i dati.
+
+public class Studente {
+
+    //variabile privata: incapsulamento dei dati
+    private String name;
+
+    //Getter per accedere alla variabile privata in lettura
+    public String getName() {
+        return name;
+    }
+
+    //Setter per modificare la variabile privata
+    public void setName(String name) {
+        this.name = name;
+    }
+
+** Differenza tra incapsulamento e data hiding **
+Spesso si confondono, i due concetti sono correlati ma hanno differenze:
+- Incapsulamento: riguarda il racchiudere dati e metodi all'interno di una classe e ontrollare l'accesso tramite modificatore di accesso
+- Data hiding: è un concetto più restrittivo che implica nascondere completamente i dati all'esterno della classe, rendendoli accessibili tramite metodi
+Il Data Hiding è una parte dell'incapsulamento, ma l'incapsulamento include anche l'uso di metodi per gestire l'accesso controllato ai dati

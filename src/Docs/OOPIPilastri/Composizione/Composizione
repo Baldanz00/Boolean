@@ -1,0 +1,14 @@
+La composizione è l'utilizzo di classi per comporre una classe più grande, dove le sue componenti saranno appunto delle sottoclassi
+In Java la composizione si iferisce al design pattern di composizione, una relazione in cui una classe (il 'contenitore')
+contiene oggetti di un altra classe ( il 'contenuto') per costruire funzionalità complesse.
+
+Invece di ereditare comportamenti, una classe composta ha un attributo che è un riferimento a un istanza di un'altra classe,.
+La composizione è una forma di aggrefazione forte, in cui la parte non può esistere indioendentemente all'intero.
+
+** Caratteristiche principali **
+. relazione 'ha-un': la composizione implementa una relazione 'ha-un', tipo l'automobile ha-un motore.
+. comportamento delegato: la classe contenitore può delegare il comportamento alla sua parte interna. Se il contenitore ha un metodo che
+chiama mioContenuto.faiQualcosa(), la classe Contenuto dovrà implementare faiQualcosa().
+. istanziazione esplicita: la classe contenitore deve istanziare esplicitamente la classe contenuta nel suo costruttore
+. gestione del ciclo di vita: in Java quando l'oggetto contenitore viene eliminato, la JVM si occuperà automaticamente anche di distruggere
+l'oggetto contenuto, a differenza di altri linguaggi come C++ dove la gestione della memoria è manuale
